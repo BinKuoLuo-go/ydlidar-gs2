@@ -2,21 +2,14 @@ package main
 
 import (
 	"fmt"
-	"log"
-	"os"
-
 	gs2 "github.com/BinKuoLuo-go/ydlidar-gs2"
+	"log"
 )
 
 func main() {
-	if len(os.Args) < 2 {
-		fmt.Fprintln(os.Stderr, "用法: example <串口名>  例如: example COM3")
-		os.Exit(1)
-	}
-	port := os.Args[1]
 
 	// 打开并初始化设备（默认波特率 921600，自动获取级联地址与参数）
-	dev, err := gs2.Open(port)
+	dev, err := gs2.Open("")
 	if err != nil {
 		log.Fatalf("打开设备失败: %v", err)
 	}

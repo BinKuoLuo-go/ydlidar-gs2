@@ -11,8 +11,7 @@ import (
 
 // Device 表示一个已连接的 GS2 设备（可能包含级联的多个模组）
 //
-// 注意：Device 的方法并非并发安全，串口读写应限定在单个 goroutine 中调用
-// 如需并发控制，请调用方自行加锁。
+// 注意：Device 的方法并非并发安全，串口读写应限定在单个 goroutine 中调用 如需并发控制，请调用方自行加锁。
 type Device struct {
 	port     serial.Port
 	portName string
